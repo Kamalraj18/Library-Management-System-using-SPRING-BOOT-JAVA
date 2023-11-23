@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add a New Book</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="p-2 m-2 text-center bg-dark text-white shadow rounded-2 ">BOOK LIST</div>
+    <div class="container">
+        <div class="row">
+            <div class = "col-lg-6 col-md-6 container justify-content-center card">
+                <div class=""card-body>
+    <form th:action="@{/books/add}" method="post" th:object="${newBook}">
+        <div class="form-group">
+        <label for="formgroup1">Title: </label>
+            <input type="text" class = "form-control" id="formgroup1" th:field="*{title}">
+        </div>
+        <div class="form-group">
+            <label for="formgroup2">Author: </label>
+        <input type="text" class = "form-control" id="formgroup2" th:field="*{author}">
+        </div>
+        <div class = "box-footer">
+        <button type="submit" class="btn btn-primary mb-2">Add Book</button>
+        <a th:href="@{/books}" class="btn btn-primary mb-2">Back to Book List</a>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</body>
+</html>
